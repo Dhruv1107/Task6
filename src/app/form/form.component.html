@@ -1,6 +1,10 @@
 <div class="main">
   <div>
-    <select id="sel-category" class="form__select-box">
+    <select
+      id="sel-category"
+      class="form__select-box"
+      (change)="changeHeading($event)"
+    >
       <option value="All" style="display: none">All</option>
       <option value="BBC">BBC</option>
       <option value="FOX">FOX</option>

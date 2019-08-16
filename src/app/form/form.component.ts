@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: "app-form",
+  templateUrl: "./form.component.html",
+  styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
+  constructor() {}
+  ngOnInit() {}
 
-  constructor() { }
+  @Output() eventClicked = new EventEmitter<Event>();
 
-  ngOnInit() {
-  }
-
+  changeHeading = (event: Event) => {
+    this.eventClicked.emit(event);
+  };
 }

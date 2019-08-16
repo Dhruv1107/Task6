@@ -46,7 +46,7 @@
   display: inline-block;
   transition: all 0.2s;
   /* All the properties are enabled to be animated. The transition property should be on initial state */
-  height: 2.2rem;
+  height: 1.1rem;
   border: 0;
   top: 75%;
 }
