@@ -10,4 +10,7 @@ export class PostsService {
   getPosts(): Posts[] {
     return POSTSDATA;
   }
+  getSelectedPost(name: string): Posts[] {
+    return POSTSDATA.filter(value => value.heading === name);
+  }
 }

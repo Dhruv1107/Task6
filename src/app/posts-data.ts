@@ -18,7 +18,7 @@ export const POSTSDATA: Posts[] = [
   },
   {
     image: "",
-    heading: "Fox",
+    heading: "FOX",
     date: "Posted on 29 June, 2019 //Category: Category One",
     content:
       "Hrithik Roshan's Super 30 full movie leaked by Tamilrockers, made available for free download",
