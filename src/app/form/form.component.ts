@@ -1,12 +1,12 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-
+import { Router } from "@angular/router";
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   ngOnInit() {}
 
   @Output() eventClicked = new EventEmitter<Event>();

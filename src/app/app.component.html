@@ -1,4 +1,6 @@
 <app-header [name]="name"></app-header>
 <app-form (eventClicked)="childEventClicked($event)"></app-form>
-<app-body [filteredData]="filteredData"></app-body>
+<router-outlet>
+  <!-- <app-body [filteredData]="filteredData"></app-body> -->
+</router-outlet>
 <app-footer></app-footer>
