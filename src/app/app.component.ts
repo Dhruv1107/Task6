@@ -10,12 +10,13 @@ import { PostsService } from "./posts.service";
 export class AppComponent {
   title = "task6";
   public name: string;
-  public filteredData: Posts[];
+  // public filteredData: Posts[];
   constructor(private postsService: PostsService) {}
   childEventClicked(event: Event) {
     this.name = (<HTMLInputElement>event.target).value;
-    this.filteredData = this.postsService.getSelectedPost(this.name);
+    this.postsService.getSelectedPost(this.name);
     console.log(this.name);
-    console.log(this.filteredData);
+    console.log(this.postsService.filteredData);
+    // console.log(this.filteredData);
   }
 }

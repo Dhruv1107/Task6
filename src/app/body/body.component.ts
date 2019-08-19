@@ -8,7 +8,7 @@ import { PostsService } from "../posts.service";
   styleUrls: ["./body.component.css"]
 })
 export class BodyComponent implements OnInit {
-  @Input() filteredData: Posts[];
+  // @Input() filteredData: Posts[];
   posts: Posts[] = [];
   constructor(private postsService: PostsService) {}
 

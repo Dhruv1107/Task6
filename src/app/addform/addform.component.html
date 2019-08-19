@@ -1,1 +1,50 @@
-<h2>addform works!</h2>
+<div class="form">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label for="source" class="newsSource">News Source</label>
+    <input
+      type="text"
+      id="source"
+      placeholder="Source"
+      class="newsInput"
+      formControlName="heading"
+    />
+
+    <label for="date" class="newsDate">Date</label>
+    <input
+      type="text"
+      id="date"
+      placeholder="News Date"
+      class="dateInput"
+      formControlName="date"
+    />
+
+    <label for="image" class="newsImage">Image url</label>
+    <input
+      type="text"
+      id="image"
+      placeholder="Url"
+      class="imageInput"
+      formControlName="image"
+    />
+
+    <label for="content" class="newsContent">Content</label>
+    <input
+      type="text"
+      id="content"
+      placeholder="News Content"
+      class="contentInput"
+      formControlName="content"
+    />
+
+    <label for="popup" class="newsPopup">News Popup</label>
+    <input
+      type="text"
+      id="popup"
+      placeholder="popup content"
+      class="popupInput"
+      formControlName="popup"
+    />
+
+    <input type="submit" value="Submit" class="submitBtn" />
+  </form>
+</div>

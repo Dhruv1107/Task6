@@ -1,4 +1,4 @@
-<div *ngIf="!filteredData; else selected">
+<div *ngIf="!this.postsService.filteredData; else selected">
   <div class="content" id="content" *ngFor="let post of posts">
     <div class="content__sub" id="content__display">
       <div class="content__img"></div>
@@ -19,8 +19,12 @@
   </div>
 </div>
 
-<div *ngIf="filteredData">
-  <div class="content" id="content" *ngFor="let post of filteredData">
+<div *ngIf="this.postsService.filteredData">
+  <div
+    class="content"
+    id="content"
+    *ngFor="let post of this.postsService.filteredData"
+  >
     <div class="content__sub" id="content__display">
       <div class="content__img"></div>
       {{ post.image }}

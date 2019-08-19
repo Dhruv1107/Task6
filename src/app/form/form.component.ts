@@ -6,7 +6,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor() {}
   ngOnInit() {}
 
   @Output() eventClicked = new EventEmitter<Event>();
