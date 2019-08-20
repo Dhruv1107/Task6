@@ -18,22 +18,23 @@ export class BodyComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getData();
-    // this.route.params.subscribe((params: Params) => {
-    //   console.log(params);
-    //   if (params.name === "ALL") {
-    //     this.getData();
-    //   } else {
-    //     this.getSourceDisplay(params.name);
-    //   }
-    // });
+    // this.getData();
+    this.route.params.subscribe((params: Params) => {
+      console.log(params);
+      if (params.name === "ALL") {
+        console.log("in all");
+        this.getData();
+      } else {
+        this.getSourceDisplay(params.name);
+      }
+    });
   }
   getData(): void {
     this.posts = this.postsService.getPosts();
     console.log(this.posts);
   }
   getSourceDisplay(name): void {
-    this.postsService.getSelectedPost(name);
+    this.posts = this.postsService.getSelectedPost(name);
   }
   showDetails(index: number): void {
     this.router.navigate(["/popup"]);

@@ -6,7 +6,7 @@ import { PopupComponent } from "./popup/popup.component";
 
 const routes: Routes = [
   { path: "addform", component: AddformComponent },
-  { path: "", component: BodyComponent },
+  { path: "", redirectTo: "ALL", pathMatch: "full" },
   { path: "popup", component: PopupComponent },
   { path: ":name", component: BodyComponent }
 ];
