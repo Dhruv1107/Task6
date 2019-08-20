@@ -2,10 +2,13 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AddformComponent } from "./addform/addform.component";
 import { BodyComponent } from "./body/body.component";
+import { PopupComponent } from "./popup/popup.component";
 
 const routes: Routes = [
   { path: "addform", component: AddformComponent },
-  { path: "", component: BodyComponent }
+  { path: "", component: BodyComponent },
+  { path: "popup", component: PopupComponent },
+  { path: ":name", component: BodyComponent }
 ];
 
 @NgModule({

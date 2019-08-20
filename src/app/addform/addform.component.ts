@@ -2,13 +2,14 @@ import { Component, OnInit } from "@angular/core";
 import { Posts } from "../posts";
 import { PostsService } from "../posts.service";
 import { FormControl, Validators, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-addform",
   templateUrl: "./addform.component.html",
   styleUrls: ["./addform.component.css"]
 })
 export class AddformComponent implements OnInit {
-  constructor(public postsService: PostsService) {}
+  constructor(public postsService: PostsService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -21,7 +22,8 @@ export class AddformComponent implements OnInit {
   });
 
   onSubmit(): void {
-    console.log(this.profileForm.value);
+    // console.log(this.profileForm.value);
     this.postsService.addPost(this.profileForm.value);
+    this.router.navigate(["/"]);
   }
 }

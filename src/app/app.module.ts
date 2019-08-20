@@ -9,6 +9,8 @@ import { BodyComponent } from "./body/body.component";
 import { PostsService } from "./posts.service";
 import { FormComponent } from "./form/form.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UnlessDirective } from './unless.directive';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FooterComponent,
     BodyComponent,
     FormComponent,
-    routingComponents
+    routingComponents,
+    UnlessDirective,
+    PopupComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [PostsService],

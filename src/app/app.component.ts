@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Posts } from "./posts";
 import { PostsService } from "./posts.service";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -11,12 +12,10 @@ export class AppComponent {
   title = "task6";
   public name: string;
   // public filteredData: Posts[];
-  constructor(private postsService: PostsService) {}
+  constructor(private postsService: PostsService, private router: Router) {}
   childEventClicked(event: Event) {
     this.name = (<HTMLInputElement>event.target).value;
     this.postsService.getSelectedPost(this.name);
-    console.log(this.name);
-    console.log(this.postsService.filteredData);
-    // console.log(this.filteredData);
+    this.router.navigate(["/", this.name]);
   }
 }

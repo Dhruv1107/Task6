@@ -1,8 +1,7 @@
-<div *ngIf="!this.postsService.filteredData; else selected">
-  <div class="content" id="content" *ngFor="let post of posts">
+<div *appUnless="this.postsService.filteredData">
+  <div class="content" id="content" *ngFor="let post of posts; let i = index">
     <div class="content__sub" id="content__display">
-      <div class="content__img"></div>
-      {{ post.image }}
+      <img class="content__img" src="{{ post.image }}" />
       <h3 class="content__modifier content__head" id="myBtn">
         {{ post.heading }}
       </h3>
@@ -12,7 +11,11 @@
       <p class="content__modifier content__matter">
         {{ post.content }}
       </p>
-      <a href="#!" class="content__modifier btn btn--pink" id="myBtn"
+      <a
+        href="#!"
+        class="content__modifier btn btn--pink"
+        id="myBtn"
+        routerLink="/popup"
         >Continue Reading</a
       >
     </div>
@@ -26,8 +29,7 @@
     *ngFor="let post of this.postsService.filteredData"
   >
     <div class="content__sub" id="content__display">
-      <div class="content__img"></div>
-      {{ post.image }}
+      <img class="content__img" src="{{ post.image }}" />
       <h3 class="content__modifier content__head" id="myBtn">
         {{ post.heading }}
       </h3>
