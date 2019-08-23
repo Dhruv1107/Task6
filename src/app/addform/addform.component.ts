@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 	styleUrls: [ './addform.component.css' ]
 })
 export class AddformComponent implements OnInit {
+	fields = [ 'heading', 'date', 'image', 'content', 'popup' ];
 	constructor(public postsService: PostsService, private router: Router) {}
 
 	ngOnInit() {}

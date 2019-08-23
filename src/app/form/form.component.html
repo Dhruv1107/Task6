@@ -5,10 +5,7 @@
       class="form__select-box"
       (change)="changeHeading($event)"
     >
-      <option value="ALL">All</option>
-      <option value="BBC">BBC</option>
-      <option value="FOX">FOX</option>
-      <option value="NBC">NBC</option>
+      <option *ngFor="let channel of channels" value="{{channel}}">{{channel}}</option>
     </select>
 
     <input type="text" placeholder="Type your Text..." class="filterTextbox" />
