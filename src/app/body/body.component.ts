@@ -13,7 +13,6 @@ export class BodyComponent implements OnInit {
 	constructor(private postsService: PostsService, private router: Router, private route: ActivatedRoute) {}
 
 	ngOnInit() {
-		// this.getData();
 		this.route.params.subscribe((params: Params) => {
 			console.log(params);
 			if (params.name === 'ALL') {
@@ -28,8 +27,5 @@ export class BodyComponent implements OnInit {
 	}
 	getSourceDisplay(name): void {
 		this.posts = this.postsService.getSelectedPost(name);
-	}
-	showPopup(post: Posts) {
-		this.postsService.showPopup(post);
 	}
 }

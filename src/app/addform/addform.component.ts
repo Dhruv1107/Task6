@@ -24,7 +24,6 @@ export class AddformComponent implements OnInit {
 	});
 
 	onSubmit(): void {
-		// console.log(this.profileForm.value);
 		this.postsService.addPost(this.profileForm.value);
 		this.router.navigate([ '/' ]);
 	}
