@@ -11,12 +11,11 @@
       <p class="content__modifier content__matter">
         {{ post.content }}
       </p>
-      <a
-        href="#!"
-        class="content__modifier btn btn--pink"
+      <button
+        class="btn"
         id="myBtn"
-        routerLink="/popup"
-        >Continue Reading</a
+        [routerLink]="['/popup/',post.id]"
+        >Continue Reading</button
       >
     </div>
   </div>

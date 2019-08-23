@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
+import { PostsService } from '../posts.service';
+import { Posts } from '../posts';
+import { Params, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-popup',
-  templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.css']
+	selector: 'app-popup',
+	templateUrl: './popup.component.html',
+	styleUrls: [ './popup.component.css' ]
 })
 export class PopupComponent implements OnInit {
+	post: Posts;
+	image: string;
+	popUp: string;
+	displayPopUp: Posts[];
+	constructor(private postsService: PostsService, private route: ActivatedRoute) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {
+		this.route.params.subscribe((params: Params) => {
+			console.log(params);
+			this.getPopUp(params.id);
+		});
+	}
+	getPopUp(id: number) {
+		console.log(id);
+		this.displayPopUp = this.postsService.addPopUp(id);
+		console.log(this.displayPopUp);
+	}
 }
