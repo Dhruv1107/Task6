@@ -1,4 +1,4 @@
-<div *appUnless="this.postsService.filteredData">
+<div *appUnless="this.postsService.filteredData" #data>
   <div class="content" id="content" *ngFor="let post of posts">
     <div class="content__sub" id="content__display">
       <img class="content__img" src="{{ post.image }}" />
@@ -11,12 +11,9 @@
       <p class="content__modifier content__matter">
         {{ post.content }}
       </p>
-      <button
-        class="btn"
-        id="myBtn"
-        [routerLink]="['/popup/',post.id]"
-        >Continue Reading</button
-      >
+      <button class="btn" id="myBtn" [routerLink]="['/popup/', post.id]">
+        Continue Reading
+      </button>
     </div>
   </div>
 </div>

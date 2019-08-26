@@ -9,8 +9,10 @@ import { BodyComponent } from "./body/body.component";
 import { PostsService } from "./posts.service";
 import { FormComponent } from "./form/form.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { UnlessDirective } from './unless.directive';
-import { PopupComponent } from './popup/popup.component';
+import { UnlessDirective } from "./unless.directive";
+import { PopupComponent } from "./popup/popup.component";
+import { AuthService } from "./auth.service";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -23,8 +25,14 @@ import { PopupComponent } from './popup/popup.component';
     UnlessDirective,
     PopupComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [PostsService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [PostsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

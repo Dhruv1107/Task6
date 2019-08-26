@@ -1,5 +1,5 @@
 <header class="header">
-  <p class="userLogin">User Login</p>
-  <button class="logoutBtn">Log out</button>
+  <button class="loginBtn" (click)="onLogin()" #logIn>User Login</button>
+  <button class="loginBtn" (click)="onLogout()" #logOut>Log out</button>
   <h1 class="header__heading">{{ name ? name : defaultName }}</h1>
 </header>

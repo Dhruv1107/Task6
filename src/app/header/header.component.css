@@ -6,16 +6,12 @@
   height: 15vh;
   width: 100vw;
 }
-.userLogin {
-  display: inline-block;
+.loginBtn {
   position: relative;
   left: 75vw;
-  color: white;
-}
-.logoutBtn {
-  display: inline-block;
-  position: relative;
-  left: 80vw;
+  top: 3vh;
+  z-index: 1;
+  /* color: white; */
 }
 .header__heading {
   color: white;
