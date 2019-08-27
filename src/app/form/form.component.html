@@ -8,8 +8,8 @@
       <option *ngFor="let channel of channels" value="{{channel}}">{{channel}}</option>
     </select>
 
-    <input type="text" placeholder="Type your Text..." class="filterTextbox" />
-    <button class="filterBtn">Filter</button>
+    <input type="text" placeholder="Type your Text..." class="filterTextbox" [(ngModel)] = 'filteredStatus' />
+    <button class="filterBtn" (click)="filterData()">Filter</button>
     <button class="addBtn" routerLink="/addform">Add Article</button>
     <hr />
   </div>
