@@ -45,5 +45,6 @@ export class HeaderComponent implements OnInit {
   ngAfterViewInit() {
     console.log("AfterViewInit");
     this.logOut.nativeElement.style.display = "none";
+    // this.authService.setLoginStatus(false);
   }
 }
