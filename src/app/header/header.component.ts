@@ -22,10 +22,10 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {
     this.defaultName = "ALL";
   }
-  onLogin() {
+  onLogin(): void {
     this.authService.setLoginStatus(true);
   }
-  onLogout() {
+  onLogout(): void {
     this.authService.setLoginStatus(false);
   }
 

@@ -2,15 +2,12 @@ import { Injectable } from "@angular/core";
 
 import { Posts } from "./posts";
 import { POSTSDATA } from "./posts-data";
-import { Router } from "@angular/router";
-
 @Injectable({
   providedIn: "root"
 })
 export class PostsService {
   popup: Posts[];
   filteredData: Posts[];
-  constructor(private router: Router) {}
 
   getPosts(): Posts[] {
     return POSTSDATA;
