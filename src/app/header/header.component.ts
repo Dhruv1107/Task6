@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.checkLoggedInStatus().subscribe((status: boolean) => {
+    this.authService.returnLoggedInStatus().subscribe((status: boolean) => {
       console.log(status);
       if (status) {
         this.logOut.nativeElement.style.display = "block";

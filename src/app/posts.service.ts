@@ -1,27 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
-import { Posts } from './posts';
-import { POSTSDATA } from './posts-data';
-import { Router } from '@angular/router';
+import { Posts } from "./posts";
+import { POSTSDATA } from "./posts-data";
+import { Router } from "@angular/router";
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: "root"
 })
 export class PostsService {
-	popup: Posts[];
-	filteredData: Posts[];
-	constructor(private router: Router) {}
+  popup: Posts[];
+  filteredData: Posts[];
+  constructor(private router: Router) {}
 
-	getPosts(): Posts[] {
-		return POSTSDATA;
-	}
-	getSelectedPost(name: string): Posts[] {
-		return POSTSDATA.filter((post) => post.heading === name);
-	}
-	addPost(addPost: Posts): void {
-		POSTSDATA.push(addPost);
-	}
-	addPopUp(id: number): Posts[] {
-		return POSTSDATA.filter((post) => post.id == id);
-	}
+  getPosts(): Posts[] {
+    return POSTSDATA;
+  }
+  getSelectedPost(name: string): Posts[] {
+    return POSTSDATA.filter(post => post.heading === name);
+  }
+  addPost(addPost: Posts): void {
+    POSTSDATA.push(addPost);
+  }
+  addPopUp(id: number): Posts[] {
+    return POSTSDATA.filter(post => post.id == id);
+  }
 }
