@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   changeHeading(event: Event): void {
     this.eventClicked.emit(event);
   }
-  // filterData(): void {
-  //   this.authService.setFilteredStatus(this.filteredStatus);
-  // }
+  filterData(): void {
+    this.authService.setFilteredStatus(this.filteredStatus);
+  }
 }

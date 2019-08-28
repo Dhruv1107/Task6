@@ -9,4 +9,10 @@ export class AuthService {
   setLoginStatus(status: boolean): void {
     this.loggedIn.next(status);
   }
+  returnFilteredStatus = (): Observable<any> =>
+    this.filteredStatus.asObservable();
+
+  setFilteredStatus(filteredStatus: string): void {
+    this.filteredStatus.next(filteredStatus);
+  }
 }

@@ -12,7 +12,7 @@ import { AuthService } from "../auth.service";
 export class BodyComponent implements OnInit {
   posts: Posts[] = [];
   filteredStatus: string = "";
-  @ViewChild("data", { static: false }) data;
+  // @ViewChild("data", { static: false }) data;
   constructor(
     private postsService: PostsService,
     private route: ActivatedRoute,
@@ -28,18 +28,24 @@ export class BodyComponent implements OnInit {
         this.getSourceDisplay(params.name);
       }
     });
-    this.authService.returnLoggedInStatus().subscribe((status: boolean) => {
-      console.log(status);
-      if (status) {
-        this.data.nativeElement.style.display = "block";
-      } else {
-        this.data.nativeElement.style.display = "none";
-      }
-    });
+    this.authService
+      .returnFilteredStatus()
+      .subscribe((filteredStatus: string) => {
+        console.log(filteredStatus);
+        this.filteredStatus = filteredStatus;
+      });
+    // this.authService.returnLoggedInStatus().subscribe((status: boolean) => {
+    //   console.log(status);
+    //   if (status) {
+    //     this.data.nativeElement.style.display = "block";
+    //   } else {
+    //     this.data.nativeElement.style.display = "none";
+    //   }
+    // });
   }
-  ngAfterViewInit() {
-    this.data.nativeElement.style.display = "none";
-  }
+  // ngAfterViewInit() {
+  //   this.data.nativeElement.style.display = "none";
+  // }
   getData(): void {
     this.posts = this.postsService.getPosts();
   }
